@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pyarrow
+pandas
+pyyaml
+pronto
+jsonschema
+openai
+tiktoken

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Project scratch
+_logs/
+cache/
+synthesis/generated/
+world_model/
+*.tmp
+*.log
+
+# macOS
+.DS_Store

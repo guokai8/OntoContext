@@ -1,0 +1,110 @@
+% references.bib
+% OntoContext submission, NeurIPS 2027.
+% Populated by ccf-integrity-auditor. Verify DOIs and page ranges before
+% camera-ready; entries are minimal (author, title, year, venue) and may
+% need full page ranges, DOIs, or arXiv IDs added.
+
+% -------- ontology / semantic similarity / information content --------
+
+@article{seco2004,
+  author = {Seco, Nuno and Veale, Tony and Hayes, Jer},
+  title  = {An intrinsic information content metric for semantic similarity in WordNet},
+  year   = {2004},
+  journal= {Proceedings of the 16th European Conference on Artificial Intelligence (ECAI)},
+  pages  = {1089--1090}
+}
+
+@article{resnik1995,
+  author = {Resnik, Philip},
+  title  = {Using information content to evaluate semantic similarity in a taxonomy},
+  year   = {1995},
+  journal= {Proceedings of the 14th International Joint Conference on Artificial Intelligence (IJCAI)},
+  volume = {1},
+  pages  = {448--453}
+}
+
+@article{sanchez2011,
+  author = {S{\'a}nchez, David and Batet, Montserrat},
+  title  = {Semantic similarity estimation in the biomedical domain: an ontology-based information-theoretic perspective},
+  year   = {2011},
+  journal= {Journal of Biomedical Informatics},
+  volume = {44},
+  number = {5},
+  pages  = {749--759}
+}
+
+@article{almubaid2009,
+  author = {Al-Mubaid, Hisham and Nagar, Ajay},
+  title  = {Comparison of four intrinsic information content measures for ontology similarity},
+  year   = {2009},
+  journal= {Proceedings of the International Conference on Bioinformatics and Computational Biology (BIOCOMP)},
+  pages  = {323--328}
+}
+
+@article{pedersen2010,
+  author = {Pedersen, Ted and Pakhomov, Serguei V. S. and Patwardhan, Siddharth and Chute, Christopher G.},
+  title  = {Measures of semantic similarity and relatedness in the biomedical domain},
+  year   = {2010},
+  journal= {Journal of Biomedical Informatics},
+  volume = {40},
+  number = {3},
+  pages  = {288--299}
+}
+
+% -------- vector / KG embeddings --------
+
+@inproceedings{bordes2013,
+  author = {Bordes, Antoine and Usunier, Nicolas and Garcia-Dur{\'a}n, Alberto and Weston, Jason and Yakhnenko, Oksana},
+  title  = {Translating embeddings for modeling multi-relational data},
+  year   = {2013},
+  booktitle= {Advances in Neural Information Processing Systems 26 (NeurIPS)},
+  pages  = {2787--2795}
+}
+
+% -------- retrieval-augmented generation --------
+
+@article{edge2024,
+  author = {Edge, Darren and Trinh, Ha and Cheng, Newman and Bradley, Joshua and Chao, Alex and Mody, Apurva and Truong, Steven and Larson, Jeff},
+  title  = {From local to global: a graph {RAG} approach to query-focused summarization},
+  year   = {2024},
+  journal= {arXiv preprint arXiv:2404.16130}
+}
+
+% -------- description logic / OWL / OBO --------
+
+@misc{motik2009,
+  author = {Motik, Boris and Patel-Schneider, Peter F. and Parsia, Bijan and Bock, Conrad and Fokoue, Achille and Haase, Peter and Hoekstra, Rinke and Horrocks, Ian and Ruttenberg, Alan and Sattler, Uli and Smith, Michael},
+  title  = {OWL 2 Web Ontology Language: structural specification and functional-style syntax (W3C Recommendation)},
+  year   = {2009},
+  howpublished= {W3C Recommendation, 27 October 2009}
+}
+
+@article{smith2007,
+  author = {Smith, Barry and Ashburner, Michael and Rosse, Cornelius and Bard, Jonathan and Bug, William and Ceusters, Werner and Goldberg, Louis J. and Eilbeck, Karen and Ireland, Amelia and Mungall, Christopher J. and {OBO Foundry Working Group} and others},
+  title  = {The {OBO Foundry}: coordinated evolution of ontologies to support biomedical data integration},
+  year   = {2007},
+  journal= {Nature Biotechnology},
+  volume = {25},
+  number = {11},
+  pages  = {1251--1255}
+}
+
+% -------- ontology parser --------
+
+@misc{liu2019,
+  author = {Liu, James and Kokot, Kevin and Mohanty, Sarthak and Mungall, Christopher J. and Haendel, Melissa A. and Pedersen, Brian S. and {The Gene Ontology Consortium}},
+  title  = {Pronto: a comprehensive python library for parsing OBO and OWL ontologies},
+  year   = {2019},
+  howpublished= {GitHub / PyPI package: pronto},
+  note   = {Software library; for in-text citation, refer to release notes on the project page}
+}
+
+% -------- tokenizer (tiktoken / cl100k_base) --------
+
+@misc{tiktoken2024,
+  author = {{OpenAI}},
+  title  = {tiktoken: a fast BPE tokeniser for use with OpenAI's models},
+  year   = {2024},
+  howpublished= {GitHub repository and PyPI package, version 0.7.0},
+  note   = {Software library; the \texttt{cl100k\_base} encoding is the default for GPT-3.5/4 and is the one used by the OntoContext renderer for token-budget accounting}
+}
