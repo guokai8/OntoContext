@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or build on the OntoContext design, please
+  cite the NeurIPS 2027 paper (when published) using the metadata
+  below. The associated code archive is the v2.0.0 tag of this
+  repository.
+title: "OntoContext: Loss-Aware, Budgeted Compilation of Large Structured Knowledge Systems into Persistent Hierarchical World Models for LLM Reasoning"
+type: software
+version: 2.0.0
+date-released: 2026-10-15
+license: MIT
+url: "https://github.com/guokai8/OntoContext"
+repository-code: "https://github.com/guokai8/OntoContext"
+repository: "https://github.com/guokai8/OntoContext"
+keywords:
+  - ontology
+  - knowledge-graph
+  - LLM-context-compression
+  - world-model
+  - retrieval-augmented-generation
+  - structured-reasoning
+  - loss-aware-compilation
+  - CURIE-preservation
+authors:
+  - family-names: "OntoContext authors"
+    given-names: ""
+    alias: "guokai8"
+    email: "guokai8@gmail.com"
+    affiliation: "OntoContext project"
+contact:
+  - family-names: "OntoContext authors"
+    email: "guokai8@gmail.com"
+    alias: "guokai8"
+references:
+  - type: article
+    title: "OntoContext: Loss-Aware, Budgeted Compilation of Large Structured Knowledge Systems into Persistent Hierarchical World Models for LLM Reasoning"
+    authors:
+      - family-names: "OntoContext authors"
+    journal: "NeurIPS 2027 (under review)"
+    year: 2027
+    url: "https://github.com/guokai8/OntoContext"
