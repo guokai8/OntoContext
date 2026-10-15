@@ -1,0 +1,6 @@
+method,n_correct,n,accuracy
+OntoContext (budget=64),0,10,0.0000
+OntoContext (budget=128),1,10,0.1000
+OntoContext (budget=256),6,10,0.6000
+OntoContext (budget=512),6,10,0.6000
+OntoContext (budget=1024),6,10,0.6000

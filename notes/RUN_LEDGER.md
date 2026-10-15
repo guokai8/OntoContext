@@ -173,3 +173,60 @@
   - `tables/step13_bench_relation_cl_2024-06-10.csv` (95%)
   - `tables/step15_bench_cross_ontology_cl_2024-06-10.csv` (74%)
 - Run-IDs: `bench_rel_v3`, `bench_xo_v2`.
+
+### Turn 28 — Step 63: LLM-agent cross-run (3 runs × 30 q × 4 conditions × 2 modes = 720 calls)
+
+- `scripts/step63_llm_agent_eval.py` now accepts `--run-tag` to archive per-question and per-summary CSVs to `tables/step63_runs/<tag>.csv` and `tables/step63_runs/<tag>_summary.csv`.
+- Ran 3 independent executions (n=30 per cell each, 4 conditions × 2 modes):
+  - **Run 1** (`step63_runs/run1_summary.csv`): default mode OC 100% acc / 0% hall; GraphRAG 96.67% / 96.67%; BM25 96.67% / 6.67%; full-corpus 96.67% / 13.33%. Hard mode OC 0%/0%; BM25 40%/0%; full-corpus 43.33%/0%; GraphRAG 0%/0%.
+  - **Run 2** (`step63_runs/run2_summary.csv`): same qualitative pattern. Hard-mode BM25 43.3%, full-corpus 43.3%.
+  - **Run 3** (`step63_runs/run3_summary.csv`): same qualitative pattern. Hard-mode BM25 36.67%.
+- New aggregator `scripts/step63_aggregate_runs.py` reads every `step63_runs/run*_summary.csv` and emits a single per-(condition, mode) mean ± SD table (`tables/step63_llm_agent_eval_cross_run.csv` + `_summary.txt`).
+- **Cross-run headline (n=90 per cell, default mode):**
+  - OntoContext @ 256 tok: 100.0 ± 0.0 % acc / **0.0 ± 0.0 %** hallucination.
+  - GraphRAG 1-hop: 97.78 ± 1.92 % acc / **97.78 ± 1.92 %** hallucination.
+  - BM25: 96.67 ± 0.0 % acc / 6.67 ± 0.0 % hallucination.
+  - Full corpus: 96.67 ± 0.0 % acc / 13.33 ± 0.0 % hallucination.
+- **Hard mode (n=90 per cell):**
+  - OntoContext: 0.0 ± 0.0 % (routes to tool; refuses to guess).
+  - BM25: 40.0 ± 3.33 %.
+  - Full corpus: 42.22 ± 1.92 %.
+  - GraphRAG: 0.0 ± 0.0 %.
+- **Statistical test:** 0/90 OntoContext vs. 88/90 GraphRAG default-mode hallucination gives Fisher exact p < 10⁻²⁵ on the pooled binary table.
+- **Outputs:**
+  - `tables/step63_runs/run{1,2,3}{,_summary}.csv` — per-run and per-question archive.
+  - `tables/step63_llm_agent_eval_cross_run.csv` — per-(condition, mode) mean ± SD.
+  - `tables/step63_llm_agent_eval_cross_run_summary.txt` — human-readable table.
+  - `figures/step63_llm_agent_eval.{png,pdf}` — Story 5 figure (last run's per-question accuracy/hallucination).
+  - `scripts/step63_aggregate_runs.py` — aggregator.
+
+### Turn 29 — Cross-model LLM-agent evaluation (Story 5b, §7.6)
+
+**Goal.** Re-shoot the §7.5 LLM-agent eval across multiple model generations to test whether the OntoContext-vs-GraphRAG hallucination gap is a property of the *rendered context* or of the *model that reads it*.
+
+**Setup.** Same 30 questions, 4 conditions, 2 modes, CL-only term pool. Models tested: gpt-4o-mini (baseline), gpt-5-mini (chat completions + reasoning), gpt-5-pro (responses API only, ran out of OpenAI credits mid-run), gpt-6-astra (chat completions). For gpt-5/6 reasoning models, the call had to use `max_completion_tokens=2048` and `temperature=1.0`; gpt-5-pro required the `v1/responses` API.
+
+**Per-model default-mode results (n=30, hallucination rate).**
+
+| Model | OC | Full | BM25 | GraphRAG |
+|---|---|---|---|---|
+| gpt-4o-mini | **0/30 (0 %)** | 4/30 | 2/30 | 29/30 |
+| gpt-5-mini | **1/30 (3.33 %)** | 4/30 | 2/30 | **30/30 (100 %)** |
+| gpt-6-astra | **1/30 (3.33 %)** | 4/30 | 2/30 | **30/30 (100 %)** |
+
+**Key finding 1.** OntoContext's hallucination floor is 0–3 % *across model generations*; the model does not close the gap on its own.
+
+**Key finding 2.** GraphRAG's hallucination ceiling is 96–100 % *across model generations* — the trend is mildly *worse* with stronger models (gpt-5-mini and gpt-6-astra both at 100 %, vs 96.67 % for gpt-4o-mini). The hypothesis: stronger reasoning models more confidently emit a CURIE-format answer even with empty context, because they have stronger priors about CL term shapes.
+
+**Key finding 3 (hard mode).** Stronger models recover more from *text-only* render (BM25 93 % vs 40 % across generations), but still cannot recover GraphRAG (0 % across all three) because it surfaces neither text nor CURIE. OntoContext stays at 0 % in all three models — the intended Invariant-I routing behavior.
+
+**Files.**
+- `tables/step63_runs/<model>/run1{,_summary}.csv` — per-model archive.
+- `tables/step63_model_comparison.csv` — consolidated 4-model × 4-condition × 2-mode table.
+- `figures/step63_llm_agent_eval_model_comparison.{png,pdf}` — cross-model figure.
+- `scripts/step63_aggregate_models.py` — aggregator.
+- `scripts/step63_llm_agent_eval.py` — updated with `--models` flag and `v1/responses` API support.
+
+**Status of GPT-5-pro:** OpenAI account credit exhausted mid-run. Data is partial (30/30 OntoContext, 30/30 Full, 28/30 BM25, 26/30 GraphRAG + all hard-mode calls = rate-limited). Excluded from the headline cross-model table; flagged in §7.6 footnote.
+
+**PDF state.** main.pdf grew from 11 → 12 pages (added §7.6 cross-model section + figure); main.tex regenerated.

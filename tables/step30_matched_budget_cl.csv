@@ -1,0 +1,46 @@
+method,family,budget,n_correct,n,accuracy
+OntoContext (budget=64),localization,64,9,10,0.9000
+OntoContext (budget=128),localization,128,9,10,0.9000
+OntoContext (budget=256),localization,256,9,10,0.9000
+OntoContext (budget=512),localization,512,9,10,0.9000
+OntoContext (budget=1024),localization,1024,9,10,0.9000
+BM25,localization,full,6,10,0.6000
+Dense (random),localization,full,0,10,0.0000
+GraphRAG,localization,full,0,10,0.0000
+Raw neighbourhood,localization,full,0,10,0.0000
+OntoContext (budget=64),hierarchy,64,10,10,1.0000
+OntoContext (budget=128),hierarchy,128,10,10,1.0000
+OntoContext (budget=256),hierarchy,256,10,10,1.0000
+OntoContext (budget=512),hierarchy,512,10,10,1.0000
+OntoContext (budget=1024),hierarchy,1024,10,10,1.0000
+BM25,hierarchy,full,9,10,0.9000
+Dense (random),hierarchy,full,0,10,0.0000
+GraphRAG,hierarchy,full,0,10,0.0000
+Raw neighbourhood,hierarchy,full,0,10,0.0000
+OntoContext (budget=64),relation-completion,64,10,10,1.0000
+OntoContext (budget=128),relation-completion,128,10,10,1.0000
+OntoContext (budget=256),relation-completion,256,10,10,1.0000
+OntoContext (budget=512),relation-completion,512,10,10,1.0000
+OntoContext (budget=1024),relation-completion,1024,10,10,1.0000
+BM25,relation-completion,full,9,10,0.9000
+Dense (random),relation-completion,full,0,10,0.0000
+GraphRAG,relation-completion,full,0,10,0.0000
+Raw neighbourhood,relation-completion,full,0,10,0.0000
+OntoContext (budget=64),sibling-discrimination,64,9,10,0.9000
+OntoContext (budget=128),sibling-discrimination,128,9,10,0.9000
+OntoContext (budget=256),sibling-discrimination,256,9,10,0.9000
+OntoContext (budget=512),sibling-discrimination,512,9,10,0.9000
+OntoContext (budget=1024),sibling-discrimination,1024,9,10,0.9000
+BM25,sibling-discrimination,full,8,10,0.8000
+Dense (random),sibling-discrimination,full,0,10,0.0000
+GraphRAG,sibling-discrimination,full,0,10,0.0000
+Raw neighbourhood,sibling-discrimination,full,0,10,0.0000
+OntoContext (budget=64),4-family avg,64,38,40,0.9500
+OntoContext (budget=128),4-family avg,128,38,40,0.9500
+OntoContext (budget=256),4-family avg,256,38,40,0.9500
+OntoContext (budget=512),4-family avg,512,38,40,0.9500
+OntoContext (budget=1024),4-family avg,1024,38,40,0.9500
+BM25,4-family avg,full,32,40,0.8000
+Dense (random),4-family avg,full,0,40,0.0000
+GraphRAG,4-family avg,full,0,40,0.0000
+Raw neighbourhood,4-family avg,full,0,40,0.0000

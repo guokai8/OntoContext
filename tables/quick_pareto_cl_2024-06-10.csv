@@ -1,0 +1,7 @@
+method,n_correct,n,accuracy,wall_seconds
+OntoContext (budget=64),48,50,0.9600,62.03
+OntoContext (budget=128),48,50,0.9600,64.97
+OntoContext (budget=256),48,50,0.9600,66.50
+OntoContext (budget=512),48,50,0.9600,63.68
+OntoContext (budget=1024),48,50,0.9600,61.91
+OntoContext (budget=2048),48,50,0.9600,64.22

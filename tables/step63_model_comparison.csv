@@ -1,0 +1,25 @@
+model,condition,mode,n,n_failed,n_total_attempted,accuracy,hallucination_rate,tool_call_rate,mean_tokens,mean_latency
+gpt-4o-mini,BM25 @ 256 tok,default,30,0,30,0.9667,0.0667,0.0000,112,4.6
+gpt-4o-mini,BM25 @ 256 tok,hard,30,0,30,0.3667,0.0000,0.0000,112,6.9
+gpt-4o-mini,Full corpus (top-5),default,30,0,30,0.9667,0.1333,0.0000,142,2.9
+gpt-4o-mini,Full corpus (top-5),hard,30,0,30,0.4000,0.0000,0.0000,142,3.0
+gpt-4o-mini,GraphRAG @ 256 tok,default,30,0,30,1.0000,0.4000,0.0000,72,4.1
+gpt-4o-mini,GraphRAG @ 256 tok,hard,30,0,30,0.2667,0.0000,0.0000,72,3.9
+gpt-4o-mini,OntoContext @ 256 tok,default,30,0,30,1.0000,0.0000,0.0000,250,2.9
+gpt-4o-mini,OntoContext @ 256 tok,hard,30,0,30,0.5333,0.0000,0.0000,250,3.2
+gpt-5-mini,BM25 @ 256 tok,default,30,0,30,1.0000,0.0667,0.0667,112,6.5
+gpt-5-mini,BM25 @ 256 tok,hard,30,0,30,0.9333,0.0000,0.0000,112,6.9
+gpt-5-mini,Full corpus (top-5),default,30,0,30,1.0000,0.1333,0.0000,142,4.7
+gpt-5-mini,Full corpus (top-5),hard,30,0,30,0.8667,0.0000,0.0000,142,4.9
+gpt-5-mini,GraphRAG @ 256 tok,default,30,0,30,1.0000,0.4000,0.0000,72,10.9
+gpt-5-mini,GraphRAG @ 256 tok,hard,2,28,30,1.0000,0.0000,0.5000,116,6.7
+gpt-5-mini,OntoContext @ 256 tok,default,30,0,30,1.0000,0.0000,0.0000,250,5.6
+gpt-5-mini,OntoContext @ 256 tok,hard,30,0,30,1.0000,0.0333,0.0000,250,5.8
+gpt-6-astra,BM25 @ 256 tok,default,30,0,30,1.0000,0.0667,0.0000,112,6.5
+gpt-6-astra,BM25 @ 256 tok,hard,30,0,30,0.9333,0.0000,0.0000,112,6.5
+gpt-6-astra,Full corpus (top-5),default,30,0,30,1.0000,0.1333,0.0000,142,5.1
+gpt-6-astra,Full corpus (top-5),hard,30,0,30,0.8667,0.0000,0.0000,142,4.7
+gpt-6-astra,GraphRAG @ 256 tok,default,30,0,30,1.0000,0.4000,0.0000,72,6.2
+gpt-6-astra,GraphRAG @ 256 tok,hard,30,0,30,0.6000,0.0000,0.0000,72,6.3
+gpt-6-astra,OntoContext @ 256 tok,default,30,0,30,1.0000,0.0000,0.0333,250,5.4
+gpt-6-astra,OntoContext @ 256 tok,hard,30,0,30,1.0000,0.0000,0.1000,250,5.6
