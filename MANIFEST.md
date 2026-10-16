@@ -34,8 +34,6 @@ submission-internal scripts have been removed.
 | `Purpose_and_Feasibility_Gate.md` | Phase-1 gate | unchanged |
 | `bibliography/references.bib` | **16** BibTeX entries (5 new for the camera-ready) | **updated v2** |
 | `bibliography/ontologies.bib` | OBO IRIs used in the benchmarks | unchanged |
-| `bibliography/library/` | Curated reference text | unchanged |
-| `bibliography/search/` | Related-work archive | unchanged |
 | `notes/RUN_LEDGER.md` | Reproducibility ledger (per-step pass/fail + headline numbers, post-F1/F2) | **updated v2** |
 | `scripts/` | **63** Python scripts: 40 pipeline + 23 utility/sweep/aggregate | **+6 v2 scripts** |
 | `tables/` | **6** camera-ready CSVs + per-model `step63_runs/` | **new in v2** |
@@ -69,7 +67,7 @@ submission-internal scripts have been removed.
 | `step63_model_comparison.csv` | 3-model × 8-cell cross-model LLM-agent table (the 0/90 hallucination headline) |
 | `step63_llm_agent_eval_cross_run.csv` | Aggregated cross-run statistics (n=90/cell across 3 models) |
 | `step63_llm_agent_eval_cross_run_summary.txt` | Human-readable cross-run summary |
-| `step63_runs/gpt_4o_mini/{run1,run_v2_clean,run_v3_patched}.csv` | gpt-4o-mini per-run archive (pre-F1, post-F1, post-F3) |
+| `step63_runs/gpt_4o_mini/{run1,run2,run3,run_v2_clean,run_v3_patched}.csv` | gpt-4o-mini per-run archive (pre-F1, post-F1, post-F1/v2-clean, post-F3) |
 | `step63_runs/gpt_5_mini/{run1,run_v2_clean,run_v3_patched}.csv` | gpt-5-mini per-run archive |
 | `step63_runs/gpt_6_astra/{run1,run_v2_clean,run_v3_patched}.csv` | gpt-6-astra per-run archive |
 
